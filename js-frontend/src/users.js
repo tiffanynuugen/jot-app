@@ -48,7 +48,7 @@ class Users {
           .then((res) => res.json())
           .then((user) => {
             label.innerHTML = `
-            ${user.name} Notes <i id="create-note" class="fas fa-plus-circle"></i>`;
+            ${user.name} Notes <i id="new-note" class="fas fa-plus-circle"></i>`;
             user.notes.forEach((note) => {
               list.innerHTML += new Note(note).renderLi();
             });
@@ -59,13 +59,13 @@ class Users {
   }
 
   addUser() {
-    const createUserBttn = document.querySelector('#create-user');
+    const newUserBttn = document.querySelector('#new-user');
     const modal = document.querySelector('.modal');
     const background = document.querySelector('.modal-background');
     const name = document.querySelector('#name');
     const addUserBttn = document.querySelector('#add-user');
 
-    createUserBttn.addEventListener('click', () => {
+    newUserBttn.addEventListener('click', () => {
       modal.classList.add('is-active');
     });
     background.addEventListener('click', () => {

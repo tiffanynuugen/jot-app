@@ -37,9 +37,9 @@ class Notes {
   }
 
   addNote(id) {
-    const createNoteBttn = document.querySelector('#create-note');
+    const newNoteBttn = document.querySelector('#new-note');
 
-    createNoteBttn.addEventListener('click', (note) => {
+    newNoteBttn.addEventListener('click', () => {
       details.innerHTML = new Note(note).renderNoteForm();
 
       const addNoteBttn = document.querySelector('#add-note');
@@ -73,7 +73,7 @@ class Notes {
       const title = document.querySelector(`h1[data-id="${id}"]`);
       const body = document.querySelector(`p[data-id="${id}"]`);
       const note = document.querySelector(`a[data-id="${id}"]`);
-      if (e.target.id === 'save') {
+      if (e.target.id === 'save-note') {
         fetch(`${this.baseUrl}/${id}`, {
           method: 'PATCH',
           headers: this.headers,
@@ -93,7 +93,7 @@ class Notes {
     list.addEventListener('click', (e) => {
       const { id } = e.target.dataset;
       const note = document.querySelector(`li[data-id="${id}"]`);
-      if (e.target.id === 'delete') {
+      if (e.target.id === 'delete-note') {
         fetch(`${this.baseUrl}/${id}`, {
           method: 'DELETE',
         });

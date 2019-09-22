@@ -24,7 +24,7 @@ class Note {
     <p contenteditable="true" id="body" data-id=${this.id} class="subtitle is-6">
       ${this.body}
     </p>
-    <a id="save" data-id=${this.id} class="button is-small">Save</a>
+    <a id="save-note" data-id=${this.id} class="button is-small">Save</a>
     `;
   }
 
@@ -33,7 +33,7 @@ class Note {
     <form>
       <input id="title" class="input subtitle is-5" type="text" placeholder="Title"/>
       <textarea id="body" class="textarea subtitle is-5" placeholder="Body" rows="10"></textarea>
-      <span id="add-note"><a class="button">Add Note</a></span>
+      <span id="add-note"><a class="button is-medium" type="submit">Add Note</a></span>
     </form>
     `;
   }
