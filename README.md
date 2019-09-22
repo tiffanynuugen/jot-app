@@ -27,7 +27,7 @@ The full path should look something like this:
 ```
 /Users/tiff/dev/jot-app/js-frontend/index.html
 ```
-Start the rails server and refresh the page to get everything working:
+Cd into the 'rails-api' folder to start the rails server and refresh the page to get everything working:
 ```
 rails s
 ```
