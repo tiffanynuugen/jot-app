@@ -4,7 +4,7 @@ Jot is an online, minimal note-taking app built with a Rails API and Javascript.
 
 ## Installation
 
-To install Jot, first clone the repo to the location you want it to be in:
+To install Jot, first clone the repo to the location you want it to be in like so:
 
 ```bash
 git clone git@github.com:tiffnuugen/jot-app.git
