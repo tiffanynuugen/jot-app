@@ -10,8 +10,8 @@ class Note {
     <li id="list-item" data-id=${this.id}>
       <a id="note" data-id=${this.id} class="menu-item">
         ${this.title}
-        <i id="delete-note" data-id=${this.id} class="fas fa-minus-circle"></i>
       </a>
+      <i id="delete-note" data-id=${this.id} class="fas fa-minus-circle"></i>
     </li>
     `;
   }
@@ -28,7 +28,7 @@ class Note {
     `;
   }
 
-  renderNoteForm() {
+  renderNewNoteForm() {
     return `
     <form>
       <input id="title" class="input subtitle is-5" type="text" placeholder="Title"/>

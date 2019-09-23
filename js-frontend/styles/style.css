@@ -59,14 +59,34 @@ header {
 
 .menu-label {
   font-size: 1rem;
+
+}
+
+#new-note {
+  font-size: 1.5rem;
 }
 
 .menu-label, .menu-list {
   margin-left: 1rem;
 }
 
-#new-note {
-  font-size: 1.5rem;
+#list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#list-item:hover {
+  background: #f5f5f5;
+}
+
+#note {
+  width: 100%;
+}
+
+
+#delete-note {
+  margin-right: .75em;
 }
 
 #new-note, #delete-note {
@@ -78,12 +98,6 @@ header {
 
 #new-note:hover, #delete-note:hover {
   opacity: 1;
-}
-
-#note {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 input[id=title]:focus, textarea[id=body]:focus, #name:focus, #trigger:focus {

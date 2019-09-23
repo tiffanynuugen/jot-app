@@ -39,8 +39,8 @@ class Notes {
   addNote(id) {
     const newNoteBttn = document.querySelector('#new-note');
 
-    newNoteBttn.addEventListener('click', () => {
-      details.innerHTML = new Note(note).renderNoteForm();
+    newNoteBttn.addEventListener('click', (note) => {
+      details.innerHTML = new Note(note).renderNewNoteForm();
 
       const addNoteBttn = document.querySelector('#add-note');
       const title = document.querySelector('#title');
