@@ -64,17 +64,33 @@ class Users {
     const background = document.querySelector('.modal-background');
     const name = document.querySelector('#name');
     const addUserBttn = document.querySelector('#add-user');
+    const help = document.querySelector('.help');
 
     newUserBttn.addEventListener('click', () => {
       modal.classList.add('is-active');
     });
+
     background.addEventListener('click', () => {
-      modal.classList.remove('is-active');
+      help.innerHTML = '';
       name.value = '';
+      modal.classList.remove('is-active');
+      help.classList.remove('is-danger');
     });
 
     addUserBttn.addEventListener('click', () => {
-      if (name.value.length > 0) {
+
+      let namesArr = [];
+      Array.from(content.children).forEach(name => {
+        namesArr.push(name.innerText.trim());
+      });
+
+      if (name.value.length < 3) {
+        help.innerHTML = 'Name must be at least 3 characters long.';
+        help.classList.add('is-danger');
+      } else if (namesArr.indexOf(name.value) !== -1) {
+        help.innerHTML = 'Name is already used.';
+        help.classList.add('is-danger');
+      } else {
         fetch(`${this.baseUrl}`, {
           method: 'POST',
           headers: this.headers,
@@ -82,10 +98,10 @@ class Users {
             name: name.value,
           }),
         }).then((res) => res.json())
-          .then((user) => {
-            content.innerHTML += new User(user).renderLink();
-            modal.classList.remove('is-active');
-          });
+        .then((user) => {
+          content.innerHTML += new User(user).renderLink();
+          modal.classList.remove('is-active');
+        });
       }
     });
   }
