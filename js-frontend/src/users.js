@@ -78,9 +78,8 @@ class Users {
     });
 
     addUserBttn.addEventListener('click', () => {
-
       let namesArr = [];
-      Array.from(content.children).forEach(name => {
+      Array.from(content.children).forEach((name) => {
         namesArr.push(name.innerText.trim());
       });
 
