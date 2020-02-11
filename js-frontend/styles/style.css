@@ -55,7 +55,7 @@ header {
   margin-top: 2rem;
 }
 
-/* columns */
+/* column is-one-fifth */
 
 .menu-label {
   font-size: 1rem;
@@ -68,6 +68,17 @@ header {
 
 .menu-label, .menu-list {
   margin-left: 1rem;
+}
+
+#new-note, #delete-note {
+  color: #dbdbdb;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  opacity: 0.3;
+}
+
+#new-note:hover, #delete-note:hover {
+  opacity: 1;
 }
 
 #list-item {
@@ -86,30 +97,26 @@ header {
 
 
 #delete-note {
-  margin-right: .75em;
+  margin-right: .75rem;
 }
 
-#new-note, #delete-note {
-  color: #dbdbdb;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  opacity: 0.3;
+#sort {
+  margin-left: 1.75rem;
 }
 
-#new-note:hover, #delete-note:hover {
-  opacity: 1;
-}
+/* column is-two-thirds */
 
 input[id=title]:focus, textarea[id=body]:focus, #name:focus, #trigger:focus {
   border-color: #dbdbdb;
   box-shadow: none;
 }
 
-[contenteditable]:focus {
-  outline: none;
-}
-
 #add-note {
   display: flex;
   justify-content: flex-end;
 }
+
+[contenteditable]:focus {
+  outline: none;
+}
+
