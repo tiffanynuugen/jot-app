@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', () => {
+  notes.sortNotes();
   notes.getUnnamedNotes();
   notes.showDetails();
   notes.addNote();
@@ -7,4 +8,4 @@ document.addEventListener('DOMContentLoaded', () => {
   users.getUsers();
   users.selectUser();
   users.addUser();
-});
+// });
