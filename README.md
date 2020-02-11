@@ -1,6 +1,6 @@
 # Jot
 
-Jot is an online, minimal note-taking app built with a Rails API and Javascript. It is a fun and sandbox-y way to take notes online. It essentially works like online text editors but with notes instead.
+Jot is an online, minimal note-taking app built with a Rails API and Javascript. It is a fun and sandbox-y way to take notes and essentially works like online text editors but with notes instead.
 
 ## Installation
 
@@ -33,7 +33,6 @@ rails s
 ```
 
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
+Sorry, contributions are not accepted for this project.
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
