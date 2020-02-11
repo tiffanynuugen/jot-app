@@ -10,13 +10,41 @@ class Notes {
     };
   }
 
-  getUnnamedNotes() {
-    fetch(`${this.baseUrl}`)
+  sortNotes() {
+    const sortBttn = document.querySelector('#sort')
+    
+    sortBttn.addEventListener('click', () => {
+      fetch(`${this.baseUrl}`)
+        .then((res) => res.json())
+        .then((notes) => {
+          notes.sort((a, b) => {
+            const titleA = a.title.toUpperCase(); 
+            const titleB = b.title.toUpperCase();
+            if (titleA < titleB) {
+              return -1;
+            }
+            if (titleA > titleB) {
+              return 1;
+            }
+              return 0;
+          }); 
+          list.innerHTML = '';
+          notes.forEach((note) => {
+            if (note.user_id === null) {
+              list.innerHTML += new Note(note).renderLi();      
+            }             
+          })
+        })
+      })
+    }
+    
+    getUnnamedNotes() {
+      fetch(`${this.baseUrl}`)
       .then((res) => res.json())
       .then((notes) => {
         notes.forEach((note) => {
           if (note.user_id === null) {
-            list.innerHTML += new Note(note).renderLi();
+            list.innerHTML += new Note(note).renderLi();  
           }
         });
       });
