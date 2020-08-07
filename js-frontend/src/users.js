@@ -6,7 +6,7 @@ class Users {
     this.baseUrl = 'http://localhost:3000/api/v1/users';
     this.headers = {
       'Content-Type': 'application/json',
-      Accept: 'application/json',
+      Accept: 'application/json'
     };
   }
 
@@ -83,7 +83,10 @@ class Users {
         namesArr.push(name.innerText.trim());
       });
 
-      if (name.value.length < 3) {
+      if (!name.value.length) {
+        help.innerHTML = "Can't be blank.";
+        help.classList.add('is-danger');
+      } else if (name.value.length < 3) {
         help.innerHTML = 'Name must be at least 3 characters long.';
         help.classList.add('is-danger');
       } else if (namesArr.indexOf(name.value) !== -1) {
@@ -94,13 +97,14 @@ class Users {
           method: 'POST',
           headers: this.headers,
           body: JSON.stringify({
-            name: name.value,
-          }),
-        }).then((res) => res.json())
-        .then((user) => {
-          content.innerHTML += new User(user).renderLink();
-          modal.classList.remove('is-active');
-        });
+            name: name.value
+          })
+        })
+          .then((res) => res.json())
+          .then((user) => {
+            content.innerHTML += new User(user).renderLink();
+            modal.classList.remove('is-active');
+          });
       }
     });
   }
