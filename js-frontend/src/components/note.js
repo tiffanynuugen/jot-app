@@ -7,13 +7,12 @@ class Note {
 
   renderNoteItem() {
     return `
-      <a id="note-item" 
-        href="#"
-        data-id=${this.id} 
-        class="menu-item is-flex is-justify-content-space-between is-align-items-center"
+      <a id="note-item"
+        data-id=${this.id}
+        class="is-flex is-justify-content-space-between is-align-items-center"
       >
         ${this.title}
-        <i id="delete-note" data-id=${this.id} class="delete is-small"></i>
+        <button id="delete-note" data-id=${this.id} class="delete is-small"></button>
       </a>
     `;
   }
