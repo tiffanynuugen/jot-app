@@ -1,0 +1,17 @@
+{
+  "name": "js-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "css-build": "sass sass/main.scss css/main.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "npm run css-watch"
+  },
+  "author": "tiff nguyen",
+  "license": "ISC",
+  "dependencies": {
+    "bulma": "^0.9.1"
+  },
+  "devDependencies": {}
+}

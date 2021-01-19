@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+$modal-content-width: 500px;
+
+@import '../node_modules/bulma/sass/utilities/_all.sass';
+@import '../node_modules/bulma/sass/base/_all.sass';
+@import '../node_modules/bulma/sass/grid/columns.sass';
+@import '../node_modules/bulma/sass/form/_all.sass';
+@import '../node_modules/bulma/sass/components/dropdown.sass';
+@import '../node_modules/bulma/sass/components/menu.sass';
+@import '../node_modules/bulma/sass/components/message.sass';
+@import '../node_modules/bulma/sass/components/modal.sass';
+@import '../node_modules/bulma/sass/elements/title.sass';
+@import '../node_modules/bulma/sass/elements/box.sass';
+@import '../node_modules/bulma/sass/elements/button.sass';
+@import '../node_modules/bulma/sass/elements/icon.sass';
+@import '../node_modules/bulma/sass/elements/other.sass';
+@import '../node_modules/bulma/sass/helpers/visibility.sass';
+@import '../node_modules/bulma/sass/helpers/flexbox.sass';
+@import '../node_modules/bulma/sass/helpers/color.sass';
+@import '../node_modules/bulma/sass/helpers/typography.sass';
+@import '../node_modules/bulma/sass/helpers/other.sass';
+@import '../node_modules/bulma/sass/helpers/spacing.sass';
+
+@mixin margin($left, $right) {
+  margin-left: $left;
+  margin-right: $right;
+}
+
+.ml-auto {
+  @include margin(auto, null);
+}
+
+.mr-auto {
+  @include margin(null, auto);
+}
+
+.mx-auto {
+  @include margin(auto, auto);
+}

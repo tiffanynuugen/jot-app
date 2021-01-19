@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+#new-title,
+#new-body,
+#body {
+  resize: none;
+  overflow: hidden;
+}
+
+#saved-message {
+  display: inline;
+  font-size: 0.65rem;
+}
+
+#new-note,
+#delete-note,
+#delete-user {
+  transition: all 0.2s ease-in-out;
+  opacity: 0.3;
+}
+
+#new-note:hover,
+#delete-note:hover,
+#delete-user:hover {
+  opacity: 1;
+}
