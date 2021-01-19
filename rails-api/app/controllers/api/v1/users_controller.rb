@@ -5,23 +5,22 @@ class Api::V1::UsersController < ApplicationController
     @users = User.all
     render json: @users, status: 200
   end
-
+  
   def create
     @user = User.create(user_params)
     render json: @user, status: 201
   end
-
+  
   def update
     @user.update(user_params)
     render json: @user, status: 200
   end
-
+  
   def destroy
-    userId = @user.id
     @user.destroy
-    render json: {message:"user deleted", userId: userId}
+    render json: {message:"user deleted", id: @user.id, name: @user.name}
   end
-
+  
   def show
     render json: @user, status: 200
   end

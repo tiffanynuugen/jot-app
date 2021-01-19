@@ -1,93 +1,102 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/style.css">
-    <meta charset="utf-8">
-    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jot - the minimal note-taking app</title>
+
+    <link rel="stylesheet" href="css/main.css" />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"
+    ></script>
   </head>
+
   <body>
-
-  <header>
-    <h1 class="title is-1">
+    <header
+      class="my-5 mx-6 is-flex is-justify-content-space-between is-align-items-center"
+    >
       <a id="jot" href="index.html">
-        Jot
+        <h1 class="title is-1">jot.</h1>
       </a>
-    </h1>
-    <div class="user-container">
-
-      <div class="dropdown">
-        <div class="dropdown-trigger">
-          <button id="trigger" class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
-            <span id="select">Select User</span>
-            <span class="icon is-small">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
-        </div>
-        <div class="dropdown-menu" id="dropdown-menu3" role="menu">
-          <div class="dropdown-content">
-            <!-- <a href="#" class="dropdown-item">
-            </a> -->
+      <div id="user-container" class="is-flex is-align-items-center">
+        <div class="dropdown">
+          <div class="dropdown-trigger">
+            <button
+              class="button"
+              aria-haspopup="true"
+              aria-controls="dropdown-menu"
+            >
+              <span id="selected-user">Select User</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div id="dropdown-menu" class="dropdown-menu">
+            <div id="user-list" class="dropdown-content"></div>
           </div>
         </div>
+        <span
+          id="new-user"
+          class="icon is-large has-text-dark ml-5 is-clickable"
+        >
+          <i class="fas fa-user-plus fas fa-3x"></i>
+        </span>
       </div>
-
-      <i id="new-user" class="fas fa-user-plus"></i>
-
-    </div>
-  </header>
+    </header>
 
     <div class="modal">
       <div class="modal-background"></div>
-       <div class="modal-content">
-
-          <div class="box">
-            <div class="field">
-              <div class="control has-icons-left">
-                <input id="name" class="input is-large" type="name" placeholder="Name">
-                <span class="icon is-left">
-                  <i class="fas fa-user"></i>
-                </span>
-              </div>
-              <p class="help"></p>
-              <span id="add-user">
-                  <a class="button is-medium" type="submit">
-                    Add User
-                  </a>
+      <div class="modal-content">
+        <div class="box has-background-white-ter p-6">
+          <form id="user-form" class="field is-flex is-flex-direction-column">
+            <div class="control has-icons-left">
+              <input
+                id="new-name"
+                class="input is-large"
+                type="text"
+                placeholder="Name"
+              />
+              <span class="icon is-left">
+                <i class="fas fa-user"></i>
               </span>
+              <p id="name-validation" class="help"></p>
             </div>
-          </div>
-
+            <button
+              id="add-user"
+              class="button is-medium mt-5 mx-auto"
+              type="submit"
+            >
+              Add User
+            </button>
+          </form>
+        </div>
       </div>
     </div>
 
-<div class="columns">
-  <div class="column is-one-fifth">
-    <p class="menu-label">
-      Unnamed Notes <i id="new-note" class="fas fa-plus-circle"></i>
-    </p>
-    <ul class="menu-list">
+    <div class="columns">
+      <div class="column is-one-fifth ml-6">
+        <p id="user-label" class="menu-label is-size-5 mb-2">
+          <span id="label-name">Unnamed</span> Notes
+          <a id="new-note" class="is-size-4 has-text-grey-light" role="button">
+            <i class="fas fa-plus-circle"></i>
+          </a>
+        </p>
+        <ul id="note-list" class="menu-list"></ul>
+      </div>
 
-    </ul>
-    <span id="sort">
-        <a class="button is-small">Sort</a>
-    </span>
- </div>
- 
-  <div class="column is-two-thirds">
-    <div class="details">
-
+      <div class="column is-three-fifths ml-6">
+        <div id="note-container"></div>
+      </div>
     </div>
-  </div>
-</div>
-    <script src="src/note.js"></script>
-    <script src="src/user.js"></script>
-    <script src="src/notes.js"></script>
-    <script src="src/users.js"></script>
+    <script src="src/components/note.js"></script>
+    <script src="src/components/user.js"></script>
+    <script src="src/adapters/usersAdapter.js"></script>
+    <script src="src/adapters/notesAdapter.js"></script>
+    <script src="src/components/notes.js"></script>
+    <script src="src/components/users.js"></script>
+    <script src="src/components/app.js"></script>
     <script src="src/index.js"></script>
-    <script src="src/app.js"></script>
   </body>
 </html>

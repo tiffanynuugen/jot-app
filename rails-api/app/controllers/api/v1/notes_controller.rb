@@ -5,30 +5,29 @@ class Api::V1::NotesController < ApplicationController
     @notes = Note.all
     render json: @notes, status: 200
   end
-
+  
   def create
     @note = Note.create(note_params)
     render json: @note, status: 201
   end
-
+  
   def update
     @note.update(note_params)
     render json: @note, status: 200
   end
-
+  
   def destroy
-    noteId = @note.id
     @note.destroy
-    render json: {message:"note deleted", noteId: noteId}
+    render json: {message:"note deleted", id: @note.id}
   end
-
+  
   def show
     render json: @note, status: 200
   end
 
   private
   def note_params
-    params.require(:note).permit(:body, :title, :user_id)
+    params.require(:note).permit(:title, :body, :user_id)
   end
 
   def set_note
