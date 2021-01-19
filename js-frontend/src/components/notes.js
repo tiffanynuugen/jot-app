@@ -7,7 +7,7 @@ class Notes {
   }
 
   initBindingsAndEventListeners() {
-    this.labelName = document.querySelector('#label-name');
+    this.name = document.querySelector('#name');
     this.noteList = document.querySelector('#note-list');
     this.newNoteBttn = document.querySelector('#new-note');
     this.noteContainer = document.querySelector('#note-container');
@@ -77,7 +77,7 @@ class Notes {
           this.notes.push(new Note(note));
         });
       }
-      this.labelName.innerText = user.name;
+      this.name.innerText = user.name;
       this.newNoteBttn.dataset.id = user.id;
       this.renderNoteList();
     }
