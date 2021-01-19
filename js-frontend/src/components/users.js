@@ -47,7 +47,7 @@ class Users {
 
   renderUserList() {
     this.userList.innerHTML =
-      this.users.map((user) => user.renderUserItem()).join('') ||
+      this.users.map((user) => user.renderUser()).join('') ||
       `<li class="dropdown-item"><em>No users found.</em></li>`;
   }
 
@@ -61,7 +61,7 @@ class Users {
   }
 
   selectUser(e) {
-    if (e.target.id === 'user-item') {
+    if (e.target.id === 'user') {
       this.selectedUser.innerText = e.target.innerText;
       document.querySelector('#note-container').innerHTML = '';
       this.adapter.getUser(e.target.dataset.id).then((user) => {

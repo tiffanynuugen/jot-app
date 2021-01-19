@@ -4,15 +4,14 @@ class User {
     this.name = user.name;
   }
 
-  renderUserItem() {
+  renderUser() {
     return `
-      <a id="user-item" 
-        href="#"
+      <a id="user" 
         data-id=${this.id} 
         class="dropdown-item pr-4 is-flex is-justify-content-space-between is-align-items-center"
       >
         ${this.name} 
-        <i id="delete-user" data-id=${this.id} class="delete is-small"></i>
+        <button id="delete-user" data-id=${this.id} class="delete is-small"></button>
       </a>
     `;
   }
