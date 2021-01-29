@@ -1,9 +1,13 @@
-class Api::V1::NotesController < ApplicationController
-  before_action :set_note, only: [:show,:update,:destroy]
+class NotesController < ApplicationController
+  before_action :set_note, only: [:show, :update, :destroy]
 
   def index
     @notes = Note.all
     render json: @notes, status: 200
+  end
+
+  def show
+    render json: @note, status: 200
   end
   
   def create
@@ -19,10 +23,6 @@ class Api::V1::NotesController < ApplicationController
   def destroy
     @note.destroy
     render json: {message:"note deleted", id: @note.id}
-  end
-  
-  def show
-    render json: @note, status: 200
   end
 
   private
