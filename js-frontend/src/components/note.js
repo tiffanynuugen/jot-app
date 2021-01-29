@@ -1,17 +1,19 @@
 class Note {
   constructor(note) {
+    console.log('note obj', note);
     this.id = note.id;
     this.title = note.title;
     this.body = note.body;
   }
 
-  renderNoteItem() {
+  renderNoteTitle(doc) {
     return `
-      <a id="note-item"
+      <a
+        id="note-title"
         data-id=${this.id}
         class="is-flex is-justify-content-space-between is-align-items-center"
       >
-        ${this.title}
+        ${doc.body.innerText}
         <button id="delete-note" data-id=${this.id} class="delete is-small"></button>
       </a>
     `;
@@ -19,32 +21,23 @@ class Note {
 
   static renderNote(note) {
     return `
-      <h2 id="title" class="subtitle is-2">${note.title}</h2>
-      <textarea id="body" class="textarea" placeholder="No text here yet...">${note.body}</textarea>
-      <a id="save-note" class="button is-small">Save</a>
-      <span id="saved-message" class="help"></span>
+      <div id="note">
+        <div id="title" class="mb-4">${note.title}</div>
+        <div id="body" class="mb-5">${note.body}</div>
+        <a id="save-note" class="button is-small">Save</a>
+        <span id="saved-message" class="help"></span>
+      </div>
     `;
   }
 
   static renderNoteForm() {
     return `
       <form id="note-form" class="is-flex is-flex-direction-column">
-        <textarea id="new-title" class="textarea" placeholder="Title" rows="1"></textarea>
-        <p id="title-validation" class="help"></p>
-        <textarea id="new-body" class="textarea mt-4 mb-5" placeholder="Body" rows="10"></textarea>
-        <button id="add-note" class="button is-medium ml-auto" type="button">
-          Add Note
-        </button>
+        <div id="new-title"></div>
+        <p id="title-validation" class="help mb-4"></p>
+        <div id="new-body" class="mb-5"></div>
+        <button id="add-note" class="button is-medium ml-auto" type="button">Add Note</button>
       </form>
-      `;
+    `;
   }
 }
-
-// `<form id="note-form">
-//   <textarea id="new-title" class="textarea" placeholder="Title" rows="1"></textarea>
-//   <p id="title-validation" class="help"></p>
-//   <textarea id="new-body" class="textarea" placeholder="Body" rows="10"></textarea>
-//   <button id="add-note" class="button is-medium" type="button">
-//     Add Note
-//   </button>
-// </form>`;
