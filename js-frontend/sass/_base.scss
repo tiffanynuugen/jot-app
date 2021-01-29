@@ -2,6 +2,23 @@
 
 $modal-content-width: 500px;
 
+@mixin margin($left, $right) {
+  margin-left: $left;
+  margin-right: $right;
+}
+
+.ml-auto {
+  @include margin(auto, null);
+}
+
+.mr-auto {
+  @include margin(null, auto);
+}
+
+.mx-auto {
+  @include margin(auto, auto);
+}
+
 @import '../node_modules/bulma/sass/utilities/_all.sass';
 @import '../node_modules/bulma/sass/base/_all.sass';
 @import '../node_modules/bulma/sass/grid/columns.sass';
@@ -21,20 +38,3 @@ $modal-content-width: 500px;
 @import '../node_modules/bulma/sass/helpers/typography.sass';
 @import '../node_modules/bulma/sass/helpers/other.sass';
 @import '../node_modules/bulma/sass/helpers/spacing.sass';
-
-@mixin margin($left, $right) {
-  margin-left: $left;
-  margin-right: $right;
-}
-
-.ml-auto {
-  @include margin(auto, null);
-}
-
-.mr-auto {
-  @include margin(null, auto);
-}
-
-.mx-auto {
-  @include margin(auto, auto);
-}
