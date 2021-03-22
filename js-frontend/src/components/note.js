@@ -1,6 +1,5 @@
 class Note {
   constructor(note) {
-    console.log('note obj', note);
     this.id = note.id;
     this.title = note.title;
     this.body = note.body;
@@ -13,7 +12,11 @@ class Note {
         data-id=${this.id}
         class="is-flex is-justify-content-space-between is-align-items-center"
       >
-        ${doc.body.innerText}
+          ${
+            doc.body.innerText.length >= 30
+              ? doc.body.innerText.slice(0, 25) + '...'
+              : doc.body.innerText
+          }
         <button id="delete-note" data-id=${this.id} class="delete is-small"></button>
       </a>
     `;
@@ -22,10 +25,9 @@ class Note {
   static renderNote(note) {
     return `
       <div id="note">
+        <span id="save-status" class="subtitle has-text-grey-light"></span>
         <div id="title" class="mb-4">${note.title}</div>
         <div id="body" class="mb-5">${note.body}</div>
-        <a id="save-note" class="button is-small">Save</a>
-        <span id="saved-message" class="help"></span>
       </div>
     `;
   }
