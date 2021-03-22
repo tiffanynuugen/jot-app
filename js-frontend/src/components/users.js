@@ -32,9 +32,7 @@ class Users {
     document.addEventListener('click', () => {
       this.dropdown.classList.remove('is-active');
     });
-    this.newUserBttn.addEventListener('click', () =>
-      this.modal.classList.add('is-active')
-    );
+    this.newUserBttn.addEventListener('click', () => this.modal.classList.add('is-active'));
     this.background.addEventListener('click', () => {
       this.modal.classList.remove('is-active');
       this.newName.value = '';
@@ -81,8 +79,7 @@ class Users {
       this.nameValidation.innerText = "Name can't be blank.";
     } else if (this.newName.value.length < 3) {
       this.showErrorColor();
-      this.nameValidation.innerText =
-        'Name is too short (minimum is 3 characters).';
+      this.nameValidation.innerText = 'Name is too short (minimum is 3 characters).';
     } else if (new Set(this.names).size !== this.names.length) {
       this.showErrorColor();
       this.nameValidation.innerText = 'Name is already taken.';
