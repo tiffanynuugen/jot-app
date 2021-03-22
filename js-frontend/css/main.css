@@ -12,15 +12,40 @@
 }
 
 /* Bulma Utilities */
-@keyframes spinAround {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
+.button, .file-cta,
+.file-name, .select select, .textarea, .input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: none;
+  display: inline-flex;
+  font-size: 1rem;
+  height: 2.5em;
+  justify-content: flex-start;
+  line-height: 1.5;
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: calc(0.75em - 1px);
+  padding-right: calc(0.75em - 1px);
+  padding-top: calc(0.5em - 1px);
+  position: relative;
+  vertical-align: top;
 }
-.is-unselectable, .button, .file, .delete, .modal-close {
+.button:focus, .file-cta:focus,
+.file-name:focus, .select select:focus, .textarea:focus, .input:focus, .is-focused.button, .is-focused.file-cta,
+.is-focused.file-name, .select select.is-focused, .is-focused.textarea, .is-focused.input, .button:active, .file-cta:active,
+.file-name:active, .select select:active, .textarea:active, .input:active, .is-active.button, .is-active.file-cta,
+.is-active.file-name, .select select.is-active, .is-active.textarea, .is-active.input {
+  outline: none;
+}
+[disabled].button, [disabled].file-cta,
+[disabled].file-name, .select select[disabled], [disabled].textarea, [disabled].input, fieldset[disabled] .button, fieldset[disabled] .file-cta,
+fieldset[disabled] .file-name, fieldset[disabled] .select select, .select fieldset[disabled] select, fieldset[disabled] .textarea, fieldset[disabled] .input {
+  cursor: not-allowed;
+}
+
+.is-unselectable, .button, .file {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -51,6 +76,11 @@
 }
 
 .delete, .modal-close {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   -moz-appearance: none;
   -webkit-appearance: none;
   background-color: rgba(10, 10, 10, 0.2);
@@ -140,39 +170,6 @@
   position: absolute;
   right: 0;
   top: 0;
-}
-
-.button, .file-cta,
-.file-name, .select select, .textarea, .input {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  align-items: center;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  box-shadow: none;
-  display: inline-flex;
-  font-size: 1rem;
-  height: 2.5em;
-  justify-content: flex-start;
-  line-height: 1.5;
-  padding-bottom: calc(0.5em - 1px);
-  padding-left: calc(0.75em - 1px);
-  padding-right: calc(0.75em - 1px);
-  padding-top: calc(0.5em - 1px);
-  position: relative;
-  vertical-align: top;
-}
-.button:focus, .file-cta:focus,
-.file-name:focus, .select select:focus, .textarea:focus, .input:focus, .is-focused.button, .is-focused.file-cta,
-.is-focused.file-name, .select select.is-focused, .is-focused.textarea, .is-focused.input, .button:active, .file-cta:active,
-.file-name:active, .select select:active, .textarea:active, .input:active, .is-active.button, .is-active.file-cta,
-.is-active.file-name, .select select.is-active, .is-active.textarea, .is-active.input {
-  outline: none;
-}
-[disabled].button, [disabled].file-cta,
-[disabled].file-name, .select select[disabled], [disabled].textarea, [disabled].input, fieldset[disabled] .button, fieldset[disabled] .file-cta,
-fieldset[disabled] .file-name, fieldset[disabled] .select select, .select fieldset[disabled] select, fieldset[disabled] .textarea, fieldset[disabled] .input {
-  cursor: not-allowed;
 }
 
 /* Bulma Base */
@@ -387,6 +384,14 @@ table th {
   color: #363636;
 }
 
+@keyframes spinAround {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
 .column {
   display: block;
   flex-basis: 0;
@@ -396,6 +401,7 @@ table th {
 }
 .columns.is-mobile > .column.is-narrow {
   flex: none;
+  width: unset;
 }
 .columns.is-mobile > .column.is-full {
   flex: none;
@@ -558,6 +564,7 @@ table th {
 @media screen and (max-width: 768px) {
   .column.is-narrow-mobile {
     flex: none;
+    width: unset;
   }
   .column.is-full-mobile {
     flex: none;
@@ -721,6 +728,7 @@ table th {
 @media screen and (min-width: 769px), print {
   .column.is-narrow, .column.is-narrow-tablet {
     flex: none;
+    width: unset;
   }
   .column.is-full, .column.is-full-tablet {
     flex: none;
@@ -884,6 +892,7 @@ table th {
 @media screen and (max-width: 1023px) {
   .column.is-narrow-touch {
     flex: none;
+    width: unset;
   }
   .column.is-full-touch {
     flex: none;
@@ -1047,6 +1056,7 @@ table th {
 @media screen and (min-width: 1024px) {
   .column.is-narrow-desktop {
     flex: none;
+    width: unset;
   }
   .column.is-full-desktop {
     flex: none;
@@ -1210,6 +1220,7 @@ table th {
 @media screen and (min-width: 1216px) {
   .column.is-narrow-widescreen {
     flex: none;
+    width: unset;
   }
   .column.is-full-widescreen {
     flex: none;
@@ -1373,6 +1384,7 @@ table th {
 @media screen and (min-width: 1408px) {
   .column.is-narrow-fullhd {
     flex: none;
+    width: unset;
   }
   .column.is-full-fullhd {
     flex: none;
@@ -1588,7 +1600,7 @@ table th {
   margin-left: calc(-1 * var(--columnGap));
   margin-right: calc(-1 * var(--columnGap));
 }
-.columns.is-variable .column {
+.columns.is-variable > .column {
   padding-left: var(--columnGap);
   padding-right: var(--columnGap);
 }
@@ -3621,6 +3633,16 @@ a.box:active {
   border-color: transparent;
   box-shadow: none;
 }
+.button.is-ghost {
+  background: none;
+  border-color: transparent;
+  color: #3273dc;
+  text-decoration: none;
+}
+.button.is-ghost:hover, .button.is-ghost.is-hovered {
+  color: #3273dc;
+  text-decoration: underline;
+}
 .button.is-white {
   background-color: white;
   border-color: transparent;
@@ -4536,8 +4558,10 @@ a.box:active {
   color: #cc0f35;
 }
 .button.is-small {
-  border-radius: 2px;
   font-size: 0.75rem;
+}
+.button.is-small:not(.is-rounded) {
+  border-radius: 2px;
 }
 .button.is-normal {
   font-size: 1rem;
@@ -4600,8 +4624,10 @@ a.box:active {
   margin-bottom: 1rem;
 }
 .buttons.are-small .button:not(.is-normal):not(.is-medium):not(.is-large) {
-  border-radius: 2px;
   font-size: 0.75rem;
+}
+.buttons.are-small .button:not(.is-normal):not(.is-medium):not(.is-large):not(.is-rounded) {
+  border-radius: 2px;
 }
 .buttons.are-medium .button:not(.is-small):not(.is-normal):not(.is-large) {
   font-size: 1.25rem;
@@ -4667,6 +4693,29 @@ a.box:active {
 .icon.is-large {
   height: 3rem;
   width: 3rem;
+}
+
+.icon-text {
+  align-items: flex-start;
+  color: inherit;
+  display: inline-flex;
+  flex-wrap: wrap;
+  line-height: 1.5rem;
+  vertical-align: top;
+}
+.icon-text .icon {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.icon-text .icon:not(:last-child) {
+  margin-right: 0.25em;
+}
+.icon-text .icon:not(:first-child) {
+  margin-left: 0.25em;
+}
+
+div.icon-text {
+  display: flex;
 }
 
 .heading {
@@ -6073,6 +6122,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 
 .is-clickable {
   cursor: pointer !important;
+  pointer-events: all !important;
 }
 
 .is-marginless {
@@ -6503,11 +6553,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   padding-bottom: 3rem !important;
 }
 
-#saved-message {
-  display: inline;
-  font-size: 0.65rem;
-}
-
+/* bulma buttons */
 #new-note,
 #delete-note,
 #delete-user {
@@ -6519,6 +6565,43 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 #delete-note:hover,
 #delete-user:hover {
   opacity: 1;
+}
+
+/* custom quill styles for snow theme */
+#new-body {
+  height: 350px;
+}
+
+#new-title,
+#new-body {
+  font-size: 16px;
+}
+
+#new-body .ql-editor {
+  white-space: pre-wrap;
+}
+
+.ql-editor.input.is-danger {
+  border-radius: 0;
+}
+
+/* custom quill styles for bubble theme */
+#save-status {
+  padding: 12px 15px;
+}
+
+#title,
+#body {
+  font-size: 16px;
+}
+
+#title .ql-editor {
+  white-space: pre !important;
+}
+
+#body .ql-editor {
+  white-space: pre-wrap !important;
+  overflow-y: visible;
 }
 
 /*# sourceMappingURL=main.css.map */

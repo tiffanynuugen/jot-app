@@ -1,9 +1,6 @@
 @charset "utf-8";
 
-#saved-message {
-  display: inline;
-  font-size: 0.65rem;
-}
+/* bulma buttons */
 
 #new-note,
 #delete-note,
@@ -16,4 +13,43 @@
 #delete-note:hover,
 #delete-user:hover {
   opacity: 1;
+}
+
+/* custom quill styles for snow theme */
+
+#new-body {
+  height: 350px;
+}
+
+#new-title,
+#new-body {
+  font-size: 16px;
+}
+
+#new-body .ql-editor {
+  white-space: pre-wrap;
+}
+
+.ql-editor.input.is-danger {
+  border-radius: 0;
+}
+
+/* custom quill styles for bubble theme */
+
+#save-status {
+  padding: 12px 15px;
+}
+
+#title,
+#body {
+  font-size: 16px;
+}
+
+#title .ql-editor {
+  white-space: pre !important;
+}
+
+#body .ql-editor {
+  white-space: pre-wrap !important;
+  overflow-y: visible;
 }
