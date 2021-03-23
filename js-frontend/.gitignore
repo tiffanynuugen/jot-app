@@ -1,5 +1,3 @@
-/node_modules
+# /node_modules
 
-css/main.css.map
-
-.prettierrc
+# css/main.css.map
