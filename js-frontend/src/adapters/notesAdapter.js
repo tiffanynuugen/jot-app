@@ -1,7 +1,7 @@
 class NotesAdapter {
   constructor() {
-    this.baseUrl = 'http://localhost:3000/notes';
-    // this.baseUrl = 'https://jot-rails-api.herokuapp.com/notes';
+    // this.baseUrl = 'http://localhost:3000/notes';
+    this.baseUrl = 'https://jot-rails-api.herokuapp.com/notes';
     this.headers = {
       Accept: 'application/json',
       'Content-Type': 'application/json'
