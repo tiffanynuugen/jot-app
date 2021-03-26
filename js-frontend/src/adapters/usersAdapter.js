@@ -1,6 +1,5 @@
 class UsersAdapter {
   constructor() {
-    // this.baseUrl = 'http://localhost:3000/users';
     this.baseUrl = 'https://jot-rails-api.herokuapp.com/users';
     this.headers = {
       Accept: 'application/json',
