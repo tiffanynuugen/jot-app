@@ -1,6 +1,6 @@
 # Jot
 
-An app to find good eats, leave reviews, and save restaurants. It is built with React/Redux on the frontend and Rails API as the backend.
+An online, minimal note-taking app built with a Rails API and Javascript that allows users to take notes and share them with each other.
 **LIVE DEMO:** https://tiffnuugen.github.io/jot-app/js-frontend/
 
 ## Installation
