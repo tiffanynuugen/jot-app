@@ -1,6 +1,6 @@
 # Jot
 
-An online, minimal note-taking app built with a Rails API and Javascript that allows users to take notes and share them with each other.
+An online, minimal note-taking app built with a Rails API and Javascript that allows users to take notes and share them with each other live.
 **LIVE DEMO:** https://tiffnuugen.github.io/jot-app/js-frontend/
 
 ## Installation
